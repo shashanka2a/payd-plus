@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light-bg text-light-text dark:bg-dark-bg dark:text-dark-text transition-colors duration-500;
+  }
+}
+
+@layer components {
+  /* Refined Glassmorphism */
+  .glass-nav {
+    @apply bg-white/90 dark:bg-[#030305]/90 backdrop-blur-xl border-b border-gray-200/50 dark:border-white/10 transition-colors duration-500;
+  }
+
+  .glass-card {
+    @apply bg-white/60 dark:bg-white/5 backdrop-blur-lg border border-white/40 dark:border-white/10 shadow-xl dark:shadow-none shadow-indigo-100/50 transition-colors duration-500;
+  }
+
+  /* Feature Card Specifics for Parallax & Pop */
+  .feature-card {
+    @apply relative overflow-hidden transition-all duration-500 ease-out border border-transparent dark:border-white/5 hover:border-indigo-500/30 dark:hover:border-indigo-400/50 hover:shadow-2xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-900/20;
+  }
+  
+  /* Subtle colored tints for cards */
+  .card-tint-blue {
+    background: linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(239,246,255,0.4) 100%);
+  }
+  .dark .card-tint-blue {
+    background: linear-gradient(145deg, rgba(30,41,59,0.4) 0%, rgba(15,23,42,0.2) 100%);
+  }
+
+  .card-tint-purple {
+    background: linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(250,245,255,0.4) 100%);
+  }
+  .dark .card-tint-purple {
+    background: linear-gradient(145deg, rgba(46,16,101,0.4) 0%, rgba(15,23,42,0.2) 100%);
+  }
+
+  .card-tint-emerald {
+    background: linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(236,253,245,0.4) 100%);
+  }
+  .dark .card-tint-emerald {
+    background: linear-gradient(145deg, rgba(6,78,59,0.4) 0%, rgba(15,23,42,0.2) 100%);
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Aurora Glows */
+  .aurora-blob {
+    @apply absolute rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-[80px] opacity-60 dark:opacity-40 animate-blob transition-all duration-700;
+  }
+
+  /* Orbit Hover Effects */
+  .orbit-item {
+    @apply transition-all duration-300 ease-out cursor-pointer;
+  }
+  .orbit-item:hover {
+    transform: scale(1.15) !important;
+    @apply border-indigo-400 dark:border-indigo-500 shadow-lg shadow-indigo-500/20 z-10;
+  }
+
+  /* Smooth Theme Transition */
+  *,
+  *::before,
+  *::after {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+  }
+}
+
