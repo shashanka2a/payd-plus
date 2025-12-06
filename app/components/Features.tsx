@@ -15,17 +15,22 @@ export default function Features() {
   useEffect(() => {
     if (typeof window === 'undefined' || !featuresRef.current) return
 
+    // Set initial state to visible as fallback
+    gsap.set(".feature-card", { opacity: 1, y: 0 })
+
+    // Animate from hidden state
     gsap.from(".feature-card", {
       scrollTrigger: {
         trigger: featuresRef.current,
-        start: "top 75%",
-        toggleActions: "play none none reverse"
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true
       },
-      y: 100,
+      y: 50,
       opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power4.out"
+      duration: 0.8,
+      stagger: 0.15,
+      ease: "power3.out"
     })
   }, [])
 
@@ -41,7 +46,7 @@ export default function Features() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start relative" id="features-container">
         {/* Feature 1: Transakt */}
-        <a href="https://www.transakt.online/" target="_blank" rel="noopener noreferrer" className="feature-card card-tint-blue backdrop-blur-xl rounded-[2.5rem] p-10 group h-full block">
+        <a href="https://www.transakt.online/" target="_blank" rel="noopener noreferrer" className="feature-card card-tint-blue backdrop-blur-xl rounded-[2.5rem] p-10 group h-full block opacity-100">
           <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           
           <div className="relative z-10">
@@ -70,7 +75,7 @@ export default function Features() {
         </a>
 
         {/* Feature 2: BuyMeAKofi */}
-        <a href="https://www.buymeakofi.com/" target="_blank" rel="noopener noreferrer" className="feature-card card-tint-purple backdrop-blur-xl rounded-[2.5rem] p-10 group h-full relative block">
+        <a href="https://www.buymeakofi.com/" target="_blank" rel="noopener noreferrer" className="feature-card card-tint-purple backdrop-blur-xl rounded-[2.5rem] p-10 group h-full relative block opacity-100">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           <div className="absolute top-0 right-0 px-4 py-1.5 bg-indigo-600 text-white text-[10px] font-bold rounded-bl-2xl tracking-wide z-20">POPULAR</div>
           
@@ -100,7 +105,7 @@ export default function Features() {
         </a>
 
         {/* Feature 3: SwiftPe */}
-        <a href="https://www.swiftpe.xyz/" target="_blank" rel="noopener noreferrer" className="feature-card card-tint-emerald backdrop-blur-xl rounded-[2.5rem] p-10 group h-full block">
+        <a href="https://www.swiftpe.xyz/" target="_blank" rel="noopener noreferrer" className="feature-card card-tint-emerald backdrop-blur-xl rounded-[2.5rem] p-10 group h-full block opacity-100">
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           
           <div className="relative z-10">

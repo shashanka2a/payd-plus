@@ -21,28 +21,33 @@
   /* Feature Card Specifics for Parallax & Pop */
   .feature-card {
     @apply relative overflow-hidden transition-all duration-500 ease-out border border-transparent dark:border-white/5 hover:border-indigo-500/30 dark:hover:border-indigo-400/50 hover:shadow-2xl hover:shadow-indigo-500/10 dark:hover:shadow-indigo-900/20;
+    opacity: 1 !important;
+    background: rgba(255, 255, 255, 0.8);
+  }
+  .dark .feature-card {
+    background: rgba(255, 255, 255, 0.05);
   }
   
   /* Subtle colored tints for cards */
   .card-tint-blue {
-    background: linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(239,246,255,0.4) 100%);
+    background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(239,246,255,0.8) 100%);
   }
   .dark .card-tint-blue {
-    background: linear-gradient(145deg, rgba(30,41,59,0.4) 0%, rgba(15,23,42,0.2) 100%);
+    background: linear-gradient(145deg, rgba(30,41,59,0.6) 0%, rgba(15,23,42,0.4) 100%);
   }
 
   .card-tint-purple {
-    background: linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(250,245,255,0.4) 100%);
+    background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(250,245,255,0.8) 100%);
   }
   .dark .card-tint-purple {
-    background: linear-gradient(145deg, rgba(46,16,101,0.4) 0%, rgba(15,23,42,0.2) 100%);
+    background: linear-gradient(145deg, rgba(46,16,101,0.6) 0%, rgba(15,23,42,0.4) 100%);
   }
 
   .card-tint-emerald {
-    background: linear-gradient(145deg, rgba(255,255,255,0.8) 0%, rgba(236,253,245,0.4) 100%);
+    background: linear-gradient(145deg, rgba(255,255,255,0.95) 0%, rgba(236,253,245,0.8) 100%);
   }
   .dark .card-tint-emerald {
-    background: linear-gradient(145deg, rgba(6,78,59,0.4) 0%, rgba(15,23,42,0.2) 100%);
+    background: linear-gradient(145deg, rgba(6,78,59,0.6) 0%, rgba(15,23,42,0.4) 100%);
   }
 
   /* Text Gradients */
